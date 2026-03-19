@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<testsuite name="Chrome Headless 145.0.0.0 (Windows 10)" package="" timestamp="2026-03-19T08:53:42" id="0" hostname="MSI" tests="2" errors="0" failures="0" time="0.058">
+<testsuite name="Chrome Headless 145.0.0.0 (Windows 10)" package="" timestamp="2026-03-19T09:04:05" id="0" hostname="MSI" tests="2" errors="0" failures="0" time="0.066">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.0.0 Safari/537.36"/>
   </properties>
   <testcase name="JokesService should be created" time="0.027" classname="JokesService"/>
-  <testcase name="AppComponent should create the app" time="0.031" classname="AppComponent"/>
+  <testcase name="AppComponent should create the app" time="0.039" classname="AppComponent"/>
   <system-out>
     <![CDATA[Chrome Headless 145.0.0.0 (Windows 10) ERROR: 'NG0304: 'mat-toolbar' is not a known element (used in the 'AppComponent' component template):
 1. If 'mat-toolbar' is an Angular component, then verify that it is a part of an @NgModule where this component is declared.

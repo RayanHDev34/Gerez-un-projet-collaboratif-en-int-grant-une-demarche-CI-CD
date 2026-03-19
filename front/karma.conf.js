@@ -30,6 +30,7 @@ module.exports = function (config) {
       subdir: '.',
       reporters: [
         { type: 'html' },
+								{ type: 'lcovonly' },
         { type: 'text-summary' }
       ]
     },
@@ -38,7 +39,7 @@ module.exports = function (config) {
       outputFile: 'junit.xml',
       useBrowserName: false
     },
-    reporters: ['progress', 'kjhtml', 'junit'],
+    reporters: ['progress', 'kjhtml', 'junit', 'coverage'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
