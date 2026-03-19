@@ -82,7 +82,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           args: >
-            -Dsonar.projectKey=RayanHDev34_Gerez-un-projet-collaboratif-en-integrant-une-demarche-CI-CD
+            -Dsonar.projectKey=RayanHDev34_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD
             -Dsonar.organization=rayanhdev34
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
