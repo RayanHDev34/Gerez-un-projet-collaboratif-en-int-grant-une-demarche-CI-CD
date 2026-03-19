@@ -25,6 +25,14 @@ jobs:
       - name: Test
         run: npm run test -- --watch=false --browsers=ChromeHeadless
 
+      - name: Publish Front Test Report
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Front Tests
+          path: front/test-results/junit.xml
+          reporter: java-junit
+
       - name: Build
         run: npm run build
 
@@ -41,3 +49,10 @@ jobs:
           distribution: temurin
           java-version: 11
       - run: mvn clean verify
+      - name: Publish Back Test Report
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Back Tests
+          path: back/target/surefire-reports/*.xml
+          reporter: java-junit
