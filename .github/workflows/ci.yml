@@ -68,17 +68,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: temurin
-          java-version: 17
-
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-
       - name: SonarCloud Scan
-        run: mvn -B verify sonar:sonar -Dsonar.projectBaseDir=.. -Dsonar.projectKey=RayanHDev34_Gerez-un-projet-collaboratif-en-integrant-une-demarche-CI-CD -Dsonar.organization=RayanHDev34 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.branch.name=main
+        uses: SonarSource/sonarcloud-github-action@master
+        with:
+          args: >
+            -Dsonar.projectKey=RayanHDev34_Gerez-un-projet-collaboratif-en-integrant-une-demarche-CI-CD
+            -Dsonar.organization=rayanhdev34
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
