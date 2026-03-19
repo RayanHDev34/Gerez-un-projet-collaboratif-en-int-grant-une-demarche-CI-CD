@@ -81,7 +81,7 @@ jobs:
       - name: Debug coverage
         run: |
           echo "=== LIST COVERAGE ==="
-          ls -R front/coverage
+          ls -R front/coverage/bobapp/coverage
           echo "=== SHOW LCOV ==="
           cat front/coverage/bobapp/lcov.info || echo "NOT FOUND"
 
