@@ -78,6 +78,13 @@ jobs:
         run: mvn clean verify
         working-directory: back
 
+      - name: Debug coverage
+        run: |
+          echo "=== LIST COVERAGE ==="
+          ls -R front/coverage
+          echo "=== SHOW LCOV ==="
+          cat front/coverage/bobapp/lcov.info || echo "NOT FOUND"
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         with:
