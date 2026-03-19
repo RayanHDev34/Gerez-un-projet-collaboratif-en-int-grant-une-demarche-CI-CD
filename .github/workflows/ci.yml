@@ -68,11 +68,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build Back
+        run: mvn clean verify
+        working-directory: back
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           args: >
-            -Dsonar.projectKey=RayanHDev34_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD
+            -Dsonar.projectKey=RayanHDev34_Gerez-un-projet-collaboratif-en-integrant-une-demarche-CI-CD
             -Dsonar.organization=rayanhdev34
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
